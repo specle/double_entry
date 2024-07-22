@@ -24,12 +24,8 @@ module DoubleEntry
       end
 
       def json_metadata
-        # MySQL JSON support added to AR 5.0
-        if ActiveRecord.version.version < '5'
-          false
-        else
-          options[:json_metadata]
-        end
+        # Assume AR JSON support is present
+        options[:json_metadata]
       end
 
       def migration_version
